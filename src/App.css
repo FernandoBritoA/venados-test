@@ -1,8 +1,7 @@
 :root {
-  --ice-blue: #f9faff;
-  --bg-primary: #071eb3;
-  --black: #161616;
-  --greyish: #a5a5a5;
+  --bg-primary: rgb(253, 189, 45);
+  --menu-color: rgba(51, 51, 51, 0.65);
+  --shadow-color: rgba(51, 51, 51, 0.3);
 }
 
 body {
@@ -23,8 +22,6 @@ a {
 }
 
 .App {
-  background-color: var(--ice-blue);
-
   margin: 0;
   padding: 0;
 }

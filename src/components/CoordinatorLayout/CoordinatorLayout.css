@@ -1,0 +1,9 @@
+.coordinator-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  width: 200px;
+}

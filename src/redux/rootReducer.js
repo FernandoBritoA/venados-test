@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import fetchData from './fetchData/fetchData.reducer';
+import menu from './menu/menu.reducer';
 
-const rootReducer = combineReducers({ fetchData });
+const rootReducer = combineReducers({ menu });
 
 export default rootReducer;

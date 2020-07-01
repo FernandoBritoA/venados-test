@@ -1,0 +1,13 @@
+.menu {
+  width: 30rem;
+  height: calc(100vh - 3.5rem);
+  position: absolute;
+  background: white;
+  box-shadow: 1px 1px 5px var(--shadow-color);
+  transform: translateX(-110%);
+  transition: all 1s ease;
+}
+
+.show {
+  transform: translateX(0%);
+}

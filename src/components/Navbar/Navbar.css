@@ -1,0 +1,21 @@
+.navbar {
+  height: 3.5rem;
+  padding-left: 1.2rem;
+  display: flex;
+  align-items: center;
+  color: var(--menu-color);
+}
+
+.page-title {
+  margin-left: 1.5rem;
+  color: black;
+  font-size: 2rem;
+}
+.menu-icon {
+  transition: filter 300ms;
+}
+
+.menu-icon:hover {
+  cursor: pointer;
+  filter: brightness(2);
+}
