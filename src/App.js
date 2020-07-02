@@ -7,12 +7,12 @@ import HomePage from './pages/HomePage';
 const App = () => {
   return (
     <div className='App'>
+      <Navbar />
       <Switch>
         <Route exact path='/'>
           <Redirect to='/home' />
         </Route>
-        <Route path='/' component={Navbar} />
-        <Route exact path='/home' component={HomePage} />
+        <Route path='/home' component={HomePage} />
       </Switch>
     </div>
   );

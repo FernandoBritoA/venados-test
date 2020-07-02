@@ -2,22 +2,17 @@ import React, { Fragment } from 'react';
 import './Navbar.css';
 import Menu from '../Menu/Menu';
 
+import { withRouter } from 'react-router-dom';
+
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { toggleMenu } from '../../redux/menu/menu.actions';
 
-const Navbar = ({ toggleMenu, location }) => {
+const Navbar = ({ toggleMenu, location: { pathname } }) => {
   const getPageTitle = () => {
-    switch (location.pathname) {
-      case '/home':
-        return 'Home';
-      case '/estadisticas':
-        return 'Estadísticas';
-      case '/jugadores':
-        return 'Jugadores';
-
-      default:
-        break;
-    }
+    if (pathname.includes('/home')) return 'Home';
+    if (pathname.includes('/estadisticas')) return 'Estadísticas';
+    if (pathname.includes('/jugadores')) return 'Jugadores';
   };
   return (
     <Fragment>
@@ -38,4 +33,4 @@ const mapDispatchToProps = (dispatch) => ({
   toggleMenu: () => dispatch(toggleMenu()),
 });
 
-export default connect(null, mapDispatchToProps)(Navbar);
+export default compose(withRouter, connect(null, mapDispatchToProps))(Navbar);

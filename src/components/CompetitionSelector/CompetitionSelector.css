@@ -1,0 +1,16 @@
+.competition-selector {
+  margin-left: 5rem;
+}
+
+.tab-option {
+  border: 1px solid var(--menu-color);
+  background: white;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin-left: 2px;
+  transition: all 0.8s ease;
+}
+.tab-option:hover {
+  cursor: pointer;
+  background: var(--shadow-color);
+}
