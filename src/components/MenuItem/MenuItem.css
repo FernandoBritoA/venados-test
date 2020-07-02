@@ -1,9 +1,9 @@
 .menu-item {
   height: 2.5rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  padding-right: 3rem;
+  padding-left: 5rem;
   margin-top: 0.3rem;
   border-bottom: 1px solid var(--menu-color);
   transition: all 0.8s ease;
@@ -17,4 +17,5 @@
 
 .active {
   border-left: 6px solid var(--bg-secondary);
+  padding-left: calc(5rem - 6px);
 }

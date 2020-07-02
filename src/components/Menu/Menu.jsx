@@ -13,9 +13,9 @@ const Menu = ({ isMenuHidden }) => {
       <div className='header'>
         <img src={logo} alt='venados' className='menu-logo' />
       </div>
-      <MenuItem />
-      <MenuItem />
-      <MenuItem />
+      <MenuItem label={'Home'} route={'/home'} />
+      <MenuItem label={'Estadísticas'} route={'/estadisticas'} />
+      <MenuItem label={'Jugadores'} route={'/jugadores'} />
     </div>
   );
 };

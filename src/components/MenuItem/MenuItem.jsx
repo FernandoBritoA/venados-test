@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './MenuItem.css';
 
-const MenuItem = () => {
+import { Link, withRouter } from 'react-router-dom';
+
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { toggleMenu } from '../../redux/menu/menu.actions';
+
+const MenuItem = ({ label, route, toggleMenu, location }) => {
+  const active = location.pathname === route;
   return (
-    <div className='menu-item active'>
-      <h2>Menu Item</h2>
-    </div>
+    <Fragment>
+      <Link
+        to={route}
+        className={`menu-item ${active ? 'active' : ''}`}
+        onClick={toggleMenu}
+      >
+        <h2>{label}</h2>
+      </Link>
+    </Fragment>
   );
 };
 
-export default MenuItem;
+const mapDispatchToProps = (dispatch) => ({
+  toggleMenu: () => dispatch(toggleMenu()),
+});
+
+export default compose(withRouter, connect(null, mapDispatchToProps))(MenuItem);

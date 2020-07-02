@@ -15,7 +15,7 @@
 }
 
 .header {
-  background: var(--bg-primary);
+  background: linear-gradient(to right, var(--bg-secondary), var(--bg-primary));
   height: 30%;
   display: flex;
   justify-content: center;
