@@ -5,9 +5,23 @@ import MonthBlock from '../MonthBlock/MonthBlock';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectAscensoMX } from '../../redux/games/games.selectors';
+import { selectCopaMX } from '../../redux/games/games.selectors';
 
-const AscensoMxResults = ({ games }) => {
+const GamesResults = ({ ascensoMx, copaMx, competition }) => {
+  const getCompetition = () => {
+    switch (competition) {
+      case 'copaMx':
+        return copaMx;
+      case 'ascensoMx':
+        return ascensoMx;
+
+      default:
+        break;
+    }
+  };
+
   const divideGamesByMonth = () => {
+    const games = getCompetition();
     const monthsArray = games.map((games) =>
       new Date(games.datetime).getMonth()
     );
@@ -37,7 +51,8 @@ const AscensoMxResults = ({ games }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  games: selectAscensoMX,
+  ascensoMx: selectAscensoMX,
+  copaMx: selectCopaMX,
 });
 
-export default connect(mapStateToProps)(AscensoMxResults);
+export default connect(mapStateToProps)(GamesResults);

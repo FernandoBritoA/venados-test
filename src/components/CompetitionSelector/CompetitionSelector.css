@@ -10,6 +10,7 @@
   padding: 10px 20px;
   margin-left: 2px;
   transition: all 0.8s ease;
+  outline: none;
 }
 .tab-option:hover {
   cursor: pointer;

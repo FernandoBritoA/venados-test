@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
-
-import { Switch, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
 import CoordinatorLayout from '../components/CoordinatorLayout/CoordinatorLayout';
 import CompetitionSelector from '../components/CompetitionSelector/CompetitionSelector';
-import CopaMxResults from '../components/CopaMxResults/CopaMxResults';
-import AscensoMxResults from '../components/AscensoMxResults/AscensoMxResults';
+import GamesResults from '../components/GamesResults/GamesResults';
 import WithSpinner from '../components/WithSpinner/WithSpinner';
 
 import { connect } from 'react-redux';
@@ -13,36 +10,28 @@ import { getGames } from '../redux/games/games.actions';
 import { createStructuredSelector } from 'reselect';
 import { selectAreGamesLoaded } from '../redux/games/games.selectors';
 
-const CopaMxResultsWithSpinner = WithSpinner(CopaMxResults);
-const AscensoMxResultsWithSpinner = WithSpinner(AscensoMxResults);
+const GamesResultsWithSpinner = WithSpinner(GamesResults);
 
 const HomePage = ({ match: { path }, getGames, areGamesLoaded }) => {
+  const [competition, setCompetition] = useState('copaMx');
+
   useEffect(() => {
     if (!areGamesLoaded) {
       getGames();
     }
   }, [getGames, areGamesLoaded]);
+
+  const changeCompetition = (competition) => {
+    setCompetition(competition);
+  };
   return (
     <div className='home-page'>
       <CoordinatorLayout />
-      <CompetitionSelector path={path} />
-      <Switch>
-        <Route
-          path={`${path}/copa-mx`}
-          render={(props) => (
-            <CopaMxResultsWithSpinner isLoading={!areGamesLoaded} {...props} />
-          )}
-        />
-        <Route
-          path={`${path}/ascenso-mx`}
-          render={(props) => (
-            <AscensoMxResultsWithSpinner
-              isLoading={!areGamesLoaded}
-              {...props}
-            />
-          )}
-        />
-      </Switch>
+      <CompetitionSelector changeCompetition={changeCompetition} />
+      <GamesResultsWithSpinner
+        isLoading={!areGamesLoaded}
+        competition={competition}
+      />
     </div>
   );
 };

@@ -1,17 +1,21 @@
 import React from 'react';
 import './CompetitionSelector.css';
 
-import { Link } from 'react-router-dom';
-
-const CompetitionSelector = ({ path }) => {
+const CompetitionSelector = ({ changeCompetition }) => {
   return (
     <div className='competition-selector'>
-      <Link to={`${path}/copa-mx`} className='tab-option'>
+      <button
+        className='tab-option'
+        onClick={() => changeCompetition('copaMx')}
+      >
         COPA MX
-      </Link>
-      <Link to={`${path}/ascenso-mx`} className='tab-option'>
+      </button>
+      <button
+        className='tab-option'
+        onClick={() => changeCompetition('ascensoMx')}
+      >
         ASCENSO MX
-      </Link>
+      </button>
     </div>
   );
 };
