@@ -11,3 +11,8 @@ export const selectAscensoMX = createSelector([selectGames], (games) =>
     ? games.array.filter((game) => game.league === 'Ascenso MX')
     : null
 );
+
+export const selectAreGamesLoaded = createSelector(
+  [selectGames],
+  (games) => !!games.array
+);
