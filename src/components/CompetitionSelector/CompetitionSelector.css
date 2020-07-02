@@ -1,5 +1,5 @@
 .competition-selector {
-  margin-left: 5rem;
+  margin-left: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -14,4 +14,19 @@
 .tab-option:hover {
   cursor: pointer;
   background: var(--shadow-color);
+}
+
+@media screen and (max-width: 600px) {
+  .competition-selector {
+    margin: 0;
+    height: 3rem;
+    display: flex;
+  }
+  .tab-option {
+    margin-left: 0;
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    width: 600px;
+    text-align: center;
+  }
 }
