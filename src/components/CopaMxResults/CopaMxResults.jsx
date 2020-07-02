@@ -1,7 +1,16 @@
 import React from 'react';
 
-const CopaMxResults = () => {
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectCopaMX } from '../../redux/games/games.selectors';
+
+const CopaMxResults = ({ games }) => {
+  console.log(games);
   return <div>Copa</div>;
 };
 
-export default CopaMxResults;
+const mapStateToProps = createStructuredSelector({
+  games: selectCopaMX,
+});
+
+export default connect(mapStateToProps)(CopaMxResults);
