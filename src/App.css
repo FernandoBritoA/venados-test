@@ -1,5 +1,6 @@
 :root {
   --bg-primary: rgb(253, 189, 45);
+  --bg-secondary: #006a28;
   --menu-color: rgba(51, 51, 51, 0.65);
   --shadow-color: rgba(51, 51, 51, 0.3);
 }
