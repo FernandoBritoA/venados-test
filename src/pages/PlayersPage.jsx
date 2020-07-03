@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import WithSpinner from '../components/WithSpinner/WithSpinner';
+import PlayersContainer from '../components/PlayersContainer/PlayersContainer';
 
 import { connect } from 'react-redux';
 import { getPlayers } from '../redux/players/players.actions';
 import { createStructuredSelector } from 'reselect';
 import { selectArePlayersLoaded } from '../redux/players/players.selectors';
+
+const PlayersContainerWithSpinner = WithSpinner(PlayersContainer);
 
 const StatsPage = ({ getPlayers, arePlayersLoaded }) => {
   useEffect(() => {
@@ -15,7 +18,7 @@ const StatsPage = ({ getPlayers, arePlayersLoaded }) => {
 
   return (
     <div className='players-page' style={{ marginTop: '3.5rem' }}>
-      PLAYERS
+      <PlayersContainerWithSpinner isLoading={!arePlayersLoaded} />
     </div>
   );
 };

@@ -1,0 +1,15 @@
+.players-container {
+  width: calc(100% - 5rem);
+  margin: 5rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 860px) {
+  .players-container {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
