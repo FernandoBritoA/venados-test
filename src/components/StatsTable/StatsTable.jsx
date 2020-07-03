@@ -10,11 +10,12 @@ const StatsTable = ({ stats }) => {
   return (
     <table className='stats-table'>
       <thead>
-        <tr>
-          <th>Tabla General</th>
-          <th>JJ</th>
-          <th>DG</th>
-          <th>PTS</th>
+        <tr className='table-head'>
+          <th className='table-number' />
+          <th className='table-text'>Tabla General</th>
+          <th className='table-number'>JJ</th>
+          <th className='table-number'>DG</th>
+          <th className='table-number'>PTS</th>
         </tr>
       </thead>
       <tbody>
