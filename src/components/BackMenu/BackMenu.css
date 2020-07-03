@@ -1,0 +1,12 @@
+.back-menu {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  background: var(--shadow-color);
+  z-index: 1;
+  transform: translateX(-110%);
+}
+.show-back-menu {
+  transform: translateX(0%);
+}
