@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './ResultDisplay.css';
+import Calendar from '../Calendar/Calendar';
 import grassBg from '../../assets/grass-texture.jpg';
 import local_image from '../../assets/venados-logo.png';
 
 const ResultDisplay = ({ results }) => {
-  const { away_score, home_score, opponent, opponent_image, local } = results;
+  const {
+    datetime,
+    away_score,
+    home_score,
+    opponent,
+    opponent_image,
+    local,
+  } = results;
   const venados = 'Venados F.C.';
 
   const [homeTeam, setHomeTeam] = useState({ name: '', image: '' });
@@ -30,16 +38,16 @@ const ResultDisplay = ({ results }) => {
         />
       </div>
       <div className='calendar-result'>
-        <div className='calendar'>MAYO</div>
+        <Calendar date={datetime} />
         <div className='result-container'>
           <div className='team-info'>
             <img src={homeTeam.image} alt='' className='team-logo' />
-            <p>{homeTeam.name}</p>
+            <p className='team-name'>{homeTeam.name}</p>
           </div>
           <span className='score'>{`${home_score} - ${away_score}`}</span>
           <div className='team-info'>
             <img src={awayTeam.image} alt='' className='team-logo' />
-            <p>{awayTeam.name}</p>
+            <p className='team-name'>{awayTeam.name}</p>
           </div>
         </div>
       </div>

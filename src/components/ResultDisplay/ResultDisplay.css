@@ -15,7 +15,6 @@
   height: 100%;
   background-position: center;
   background-size: cover;
-  opacity: 0.9;
 }
 
 .calendar-result {
@@ -24,11 +23,6 @@
   width: 100%;
   height: 100%;
   display: flex;
-}
-
-.calendar {
-  width: 30%;
-  border: 1px solid blue;
 }
 
 .result-container {
@@ -55,7 +49,7 @@
   font-size: 4rem;
   margin: 0 20px;
 }
-p {
+.team-name {
   text-align: center;
 }
 
@@ -74,9 +68,6 @@ p {
 }
 
 @media screen and (max-width: 450px) {
-  .calendar {
-    width: 25%;
-  }
   .result-container {
     width: 75%;
   }

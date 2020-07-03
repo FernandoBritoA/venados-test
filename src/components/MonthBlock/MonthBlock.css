@@ -2,6 +2,9 @@
   width: calc(100%-5rem);
   margin: 1rem 2.5rem;
 }
+.month-block:first-child {
+  margin-top: 0;
+}
 
 .month-header {
   background: var(--menu-color);
@@ -10,7 +13,7 @@
   letter-spacing: 1px;
   font-size: 1.4rem;
   padding: 0.3rem 1rem;
-  box-shadow: 0 5px 10px black;
+  box-shadow: 1px 5px 10px black;
 }
 
 @media screen and (max-width: 600px) {

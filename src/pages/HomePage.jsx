@@ -27,7 +27,10 @@ const HomePage = ({ match: { path }, getGames, areGamesLoaded }) => {
   return (
     <div className='home-page'>
       <CoordinatorLayout />
-      <CompetitionSelector changeCompetition={changeCompetition} />
+      <CompetitionSelector
+        changeCompetition={changeCompetition}
+        competition={competition}
+      />
       <GamesResultsWithSpinner
         isLoading={!areGamesLoaded}
         competition={competition}

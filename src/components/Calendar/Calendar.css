@@ -1,0 +1,51 @@
+.calendar {
+  width: 30%;
+  border-right: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 2px 2px black;
+}
+
+.day-number {
+  font-size: 2.5rem;
+  padding: 0 1rem;
+  padding-top: 10px;
+}
+.day-name {
+  font-size: 2.5rem;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 860px) {
+  .calendar {
+    flex-direction: column;
+  }
+  .calendar-ico {
+    font-size: 2rem;
+  }
+  .day-number {
+    font-size: 1.8rem;
+    padding: 6px 0;
+  }
+  .day-name {
+    font-size: 2rem;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .calendar {
+    width: 25%;
+  }
+  .calendar-ico {
+    font-size: 1.8rem;
+  }
+  .day-number {
+    font-size: 1.6rem;
+    padding: 3px 0;
+  }
+  .day-name {
+    font-size: 1.6rem;
+  }
+}

@@ -1,5 +1,5 @@
 .spinner-overlay {
-  height: 100%;
+  height: 50vh;
   width: 100%;
   display: flex;
   justify-content: center;
