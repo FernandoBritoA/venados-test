@@ -32,5 +32,6 @@ export const getGames = () => async (dispatch) => {
     dispatch(getGamesSuccess(games));
   } catch (error) {
     dispatch(getGamesFailure());
+    console.log(error);
   }
 };
