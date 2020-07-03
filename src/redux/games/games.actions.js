@@ -31,7 +31,6 @@ export const getGames = () => async (dispatch) => {
     const games = response.data.data.games;
     dispatch(getGamesSuccess(games));
   } catch (error) {
-    console.log(error);
     dispatch(getGamesFailure());
   }
 };

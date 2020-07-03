@@ -1,0 +1,7 @@
+.stats-table {
+  width: calc(90vw-5rem);
+  margin: 1rem 2.5rem;
+}
+thead {
+  border: 1px solid yellow;
+}
