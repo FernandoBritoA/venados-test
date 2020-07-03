@@ -1,25 +1,25 @@
-import gamesAT from './games.actionTypes';
+import playersAT from './players.actionTypes';
 
 const INITIAL_STATE = {
-  array: null,
+  obj: null,
   isLoading: false,
 };
 
-const gamesReducer = (state = INITIAL_STATE, action) => {
+const playersReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
   switch (type) {
-    case gamesAT.GET_GAMES_START:
+    case playersAT.GET_PLAYERS_START:
       return {
         ...state,
         isLoading: true,
       };
-    case gamesAT.GET_GAMES_SUCCESS:
+    case playersAT.GET_PLAYERS_SUCCESS:
       return {
         ...state,
         isLoading: false,
-        array: payload,
+        obj: payload,
       };
-    case gamesAT.GET_GAMES_FAILURE:
+    case playersAT.GET_PLAYERS_FAILURE:
       return {
         ...state,
         isLoading: false,
@@ -29,4 +29,4 @@ const gamesReducer = (state = INITIAL_STATE, action) => {
       return state;
   }
 };
-export default gamesReducer;
+export default playersReducer;

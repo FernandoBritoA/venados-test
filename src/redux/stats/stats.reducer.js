@@ -1,8 +1,8 @@
 import statsAT from './stats.actionTypes';
 
 const INITIAL_STATE = {
-  isLoading: false,
   array: null,
+  isLoading: false,
 };
 
 const statsReducer = (state = INITIAL_STATE, action) => {
