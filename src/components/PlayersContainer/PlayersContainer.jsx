@@ -9,7 +9,6 @@ import { selectPlayers } from '../../redux/players/players.selectors';
 const PlayersContainer = ({ players }) => {
   const { goalkeepers, defenses, centers, forwards, coaches } = players;
   const playersArray = [goalkeepers, defenses, centers, forwards, coaches];
-  console.log(playersArray);
 
   return (
     <div className='players-container'>

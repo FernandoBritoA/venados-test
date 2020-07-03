@@ -28,3 +28,8 @@
 .menu-logo {
   width: 35%;
 }
+@media screen and (max-width: 330px) {
+  .menu {
+    width: 18rem;
+  }
+}
