@@ -18,9 +18,16 @@
 }
 .menu-icon {
   transition: filter 300ms;
+  z-index: 1;
 }
 
 .menu-icon:hover {
   cursor: pointer;
   filter: brightness(2);
+}
+
+@media screen and (max-width: 600px) {
+  .page-title {
+    font-size: 1.6rem;
+  }
 }

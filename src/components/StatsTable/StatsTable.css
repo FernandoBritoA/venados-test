@@ -1,7 +1,6 @@
 .stats-table {
   width: calc(100% - 5rem);
-  margin: 5rem 2.5rem;
-  margin-bottom: 0;
+  margin: 0 2.5rem;
   border-collapse: collapse;
   border-radius: 10px;
   overflow: hidden;
@@ -29,6 +28,7 @@
 }
 .team-name {
   padding-left: 2rem;
+  text-align: start;
 }
 
 .table-item {

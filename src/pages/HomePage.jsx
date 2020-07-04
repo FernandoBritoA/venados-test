@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import CoordinatorLayout from '../components/CoordinatorLayout/CoordinatorLayout';
 import CompetitionSelector from '../components/CompetitionSelector/CompetitionSelector';
 import GamesResults from '../components/GamesResults/GamesResults';
 import WithSpinner from '../components/WithSpinner/WithSpinner';
@@ -26,7 +25,6 @@ const HomePage = ({ match: { path }, getGames, areGamesLoaded }) => {
   };
   return (
     <div className='home-page'>
-      <CoordinatorLayout />
       <CompetitionSelector
         changeCompetition={changeCompetition}
         competition={competition}

@@ -17,7 +17,7 @@ const StatsPage = ({ getStats, areStatsLoaded }) => {
   }, [getStats, areStatsLoaded]);
 
   return (
-    <div className='stats-page' style={{ marginTop: '3.5rem' }}>
+    <div className='stats-page'>
       <StatsTableWithSpinner isLoading={!areStatsLoaded} />
     </div>
   );

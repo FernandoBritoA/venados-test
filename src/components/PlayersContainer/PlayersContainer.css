@@ -1,6 +1,6 @@
 .players-container {
   width: calc(100% - 5rem);
-  margin: 5rem 2.5rem;
+  margin: 0 2.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

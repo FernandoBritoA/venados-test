@@ -2,8 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
-  margin-top: 3.5rem;
+  top: 3.5rem;
+  z-index: 1;
+  position: fixed;
+  width: 350px;
+  margin-left: calc(50% - 175px);
+  transition: all 500ms ease;
 }
 
 .logo-image {
@@ -13,5 +17,12 @@
 @media screen and (max-width: 860px) {
   .logo-image {
     width: 130px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .coordinator-layout {
+    width: 132px;
+    margin-left: calc(50% - 66px);
   }
 }
