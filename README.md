@@ -1,4 +1,5 @@
 Link to run live application: https://venados-test.netlify.app/
+Please disable pop-ups block for the page to be able to get redirected to the scheduled google calendar date
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
