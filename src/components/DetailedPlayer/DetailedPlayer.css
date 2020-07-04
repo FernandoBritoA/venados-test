@@ -93,3 +93,25 @@
 .player-data {
   color: var(--menu-color);
 }
+
+@media screen and (max-width: 450px) {
+  .player-card {
+    width: 90%;
+    left: 5%;
+    position: fixed;
+  }
+  .player-title {
+    font-size: 1.3rem;
+  }
+  .detailed-player-image-container {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+  }
+  .main-player-data {
+    font-size: 1.2rem;
+  }
+  .player-category {
+    font-size: 1.3rem;
+  }
+}
