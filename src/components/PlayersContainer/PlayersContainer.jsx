@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment, useState } from 'react';
 import './PlayersContainer.css';
 import PlayerPreview from '../PlayerPreview/PlayerPreview';
+import DetailedPlayer from '../DetailedPlayer/DetailedPlayer';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -10,14 +11,29 @@ const PlayersContainer = ({ players }) => {
   const { goalkeepers, defenses, centers, forwards, coaches } = players;
   const playersArray = [goalkeepers, defenses, centers, forwards, coaches];
 
+  const [detailedPlayer, setDetailedPlayer] = useState(null);
+
+  const showPlayer = (playerToShow) => {
+    setDetailedPlayer(playerToShow);
+  };
+
   return (
-    <div className='players-container'>
-      {playersArray.map((playerGroup) =>
-        playerGroup.map((player, i) => (
-          <PlayerPreview key={i} player={player} />
-        ))
-      )}
-    </div>
+    <Fragment>
+      {detailedPlayer ? (
+        <DetailedPlayer
+          detailedPlayer={detailedPlayer}
+          showPlayer={showPlayer}
+        />
+      ) : null}
+
+      <div className='players-container'>
+        {playersArray.map((playerGroup) =>
+          playerGroup.map((player, i) => (
+            <PlayerPreview key={i} player={player} showPlayer={showPlayer} />
+          ))
+        )}
+      </div>
+    </Fragment>
   );
 };
 
