@@ -38,7 +38,11 @@ const ResultDisplay = ({ results }) => {
         />
       </div>
       <div className='calendar-result'>
-        <Calendar date={datetime} />
+        <Calendar
+          date={datetime}
+          homeTeam={homeTeam.name}
+          awayTeam={awayTeam.name}
+        />
         <div className='result-container'>
           <div className='team-info'>
             <img src={homeTeam.image} alt='' className='team-logo' />

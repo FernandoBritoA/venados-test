@@ -4,18 +4,23 @@ import logo from '../../assets/venados-logo.png';
 
 const CoordinatorLayout = () => {
   const shrinkLogo = () => {
+    //Get logo container and logo
     const choosenLogo = document.getElementById('shrink-logo');
     const shrinkLogoContainer = document.getElementById(
       'shrink-logo-container'
     );
+    //Get window width and default values
+    const windowWidth = window.innerWidth;
     let logoWidth = '200px';
     let maxScroll = 80;
-    const windowWidth = window.innerWidth;
+    let containerWidth = '350px';
+
+    //Change container width and max scroll  values depending on the window size
     if (windowWidth < 860) {
       logoWidth = '130px';
       maxScroll = 50;
     }
-    let containerWidth = '350px';
+
     if (windowWidth < 450) {
       containerWidth = '132px';
     } else {
@@ -24,6 +29,8 @@ const CoordinatorLayout = () => {
     shrinkLogoContainer.style.width = containerWidth;
 
     if (choosenLogo) {
+      //When scrolling more than te maxScroll value, shrink the
+      //logo and logo container
       if (
         document.body.scrollTop > maxScroll ||
         document.documentElement.scrollTop > maxScroll
@@ -31,6 +38,7 @@ const CoordinatorLayout = () => {
         choosenLogo.style.width = '50px';
         shrinkLogoContainer.style.top = '.2rem';
 
+        //If mobile view, push to the right the shrinked logo
         if (windowWidth < 450) {
           shrinkLogoContainer.style.right = '0';
         } else {
@@ -40,6 +48,7 @@ const CoordinatorLayout = () => {
         choosenLogo.style.width = logoWidth;
         shrinkLogoContainer.style.top = '3.5rem';
 
+        //Recenter the logo on unshrink
         if (windowWidth < 450) {
           shrinkLogoContainer.style.right = 'calc(50% - 66px)';
         } else {
